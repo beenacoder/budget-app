@@ -9,8 +9,10 @@ function App() {
 	const [modal, setModal] = useState(false);
 	const [animarModal, setAnimarModal] = useState(false);
 
+	const [gastos, setGastos] = useState([]);
+
 	const guardarGastos = (gasto) => {
-		console.log(gasto)
+		setGastos([...gastos, gasto]);
 	}
 
 

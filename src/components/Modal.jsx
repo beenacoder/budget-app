@@ -14,6 +14,7 @@ const Modal = ({setModal, animarModal, setAnimarModal, guardarGastos}) => {
             setMensaje("Todos los campos son obligatorios...")
             return;    
         } 
+        
         guardarGastos({nombre, cantidad, categoria})
         
         setNombre('');
