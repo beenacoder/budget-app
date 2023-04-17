@@ -13,6 +13,11 @@ function App() {
 
 	const guardarGastos = (gasto) => {
 		setGastos([...gastos, gasto]);
+
+		setAnimarModal(false);
+        setTimeout(()=>{
+			setModal(false);
+		}, 500)
 	}
 
 
