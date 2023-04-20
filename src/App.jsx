@@ -23,14 +23,22 @@ function App() {
 	}, [gastoEditar])
 
 	const guardarGastos = (gasto) => {
-		gasto.id=generarId();
-		gasto.fecha = Date.now();
-		setGastos([...gastos, gasto]);
 
-		setAnimarModal(false);
-        setTimeout(()=>{
-			setModal(false);
-		}, 500)
+		if(gasto.id){
+			//Actualizar
+			const gastosActualizados = gastos.map(gastoEstado => gastoEstado.id === gasto.id ? gasto : gastoEstado);
+			setGastos(gastosActualizados);
+		} else {
+			//Nuevo gasto
+			gasto.id=generarId();
+			gasto.fecha = Date.now();
+			setGastos([...gastos, gasto]);
+			//No colocamos un return porque necesitamos que siga con la animacion
+		}
+			setAnimarModal(false);
+			setTimeout(()=>{
+				setModal(false);
+			}, 500)
 	}
 
 
