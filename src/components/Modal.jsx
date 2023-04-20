@@ -58,7 +58,7 @@ const Modal = ({setModal, animarModal, setAnimarModal, guardarGastos, gastoEdita
                 onSubmit={handleSubmit}
                 >
                 
-                <legend>Nuevo Gasto</legend>
+                <legend>{gastoEditar.nombre ? 'EDITAR GASTO' : 'NUEVO GASTO'}</legend>
 
                 {mensaje && <Mensaje tipo="error">
                                 {mensaje}
@@ -108,7 +108,7 @@ const Modal = ({setModal, animarModal, setAnimarModal, guardarGastos, gastoEdita
 
                <input 
                     type="submit" 
-                    value="Añadir Gasto" 
+                    value= {gastoEditar.nombre ? 'GUARDAR CAMBIOS' : 'NUEVO GASTO'} 
                 />
                </div>
             </form>
