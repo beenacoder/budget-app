@@ -28,7 +28,7 @@ const diccionarioIconos = {
   suscripciones: IconoSuscripciones
 }
 
-const Gasto = ({ gasto, setGastoEditar }) => {
+const Gasto = ({ gasto, gastoEditar, setGastoEditar }) => {
     const {categoria, nombre, cantidad, id, fecha} = gasto;
 
 	const leadingActions = () => (
@@ -64,10 +64,11 @@ const Gasto = ({ gasto, setGastoEditar }) => {
                     <p className='categoria'>{categoria}</p>
                     <p className='nombre-gasto'>{nombre}</p>
                     <p className="fecha-gasto">
-                      Agregado el: {' '}
+                       {Object.keys(gastoEditar).length > 0 ? `Editado el: ${' '}` : `Agregado el: ${' '}` }
                       <span>{formatearFecha(fecha)}</span>
                     </p>
                 </div>
+
             </div>
             <p className="cantidad-gasto">${cantidad}</p>
         </div>

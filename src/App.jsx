@@ -67,6 +67,7 @@ function App() {
 						<ListadoGastos
 							setGastoEditar = {setGastoEditar}
 							gastos={gastos}	
+							gastoEditar = {gastoEditar}
 						/>
 					</main>
 					<div className='nuevo-gasto'>
